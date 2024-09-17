@@ -54,7 +54,6 @@
                 }
             }
 
-            /* Tooltip styling */
             &::after {
                 content: attr(data-tooltip);
                 position: absolute;
