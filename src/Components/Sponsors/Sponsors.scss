@@ -11,7 +11,7 @@
     --boxShadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
     --borderRadius: 12px;
 
-    /* Font and Typography */
+/* Font and Typography */
     --biggestFontSize: 2.4rem;
     --h1FontSize: 2.2rem;
     --h2FontSize: 1.25rem;
@@ -81,7 +81,6 @@
     }
 }
 
-/* Responsive styles */
 @media screen and (max-width: 768px) {
     .Sponsors {
         padding: 1.5rem 0;
