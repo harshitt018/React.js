@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-// Default Page styling
 * {
     padding: 0;
     margin: 0;
@@ -9,7 +8,6 @@
     scroll-behavior: smooth;
 }
 
-// Color Scheme and Variables
 :root {
     --primaryColor: hsl(233, 52%, 19%);
     --secColor: hsl(233, 16%, 44%);
@@ -32,7 +30,6 @@
     --smallestFontSize: 0.75rem;
 }
 
-// General Container for the Auth Components
 .auth-container {
     max-width: 400px;
     margin: 2rem auto;
