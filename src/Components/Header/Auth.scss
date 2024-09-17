@@ -202,11 +202,11 @@
     text-align: center;
     font-size: var(--normalFontSize);
     color: var(--primaryColor);
-    display: none; // Hidden by default
+    display: none; 
 }
 
 .message-box.show {
-    display: block; // Show when active
+    display: block; 
 }
 
 .message-box button {
