@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+:root {
+  --primaryColor: hsl(233, 52%, 19%);
+  --secColor: hsl(233, 16%, 44%);
+  --hoverColor: hsl(8, 100%, 70%);
+  --blackColor: #707070;
+  --greyText: hsl(0, 0%, 75%);
+  --bgColor: hsl(0, 0%, 100%);
+  --shadowColor: hsla(0, 0%, 0%, 0.314);
+  --gradient: linear-gradient(to bottom, hsl(16, 100%, 71%), hsl(8, 100%, 70%));
+  --boxShadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  /* Font and Typography */
+  --biggestFontSize: 2.4rem;
+  --h1FontSize: 2.2rem;
+  --h2FontSize: 1.25rem;
+  --h3FontSize: 1rem;
+  --normalFontSize: 0.938rem;
+  --smallFontSize: 0.813rem;
+  --smallestFontSize: 0.75rem;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.icon {
+  font-size: var(--h2FontSize);
+  cursor: pointer;
+}
+
+img {
+  height: auto;
+  width: 100%;
+}
+
+.btn {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 8px;
+  background: var(--gradient);
+  box-shadow: var(--boxShadow);
+  font-size: var(--h3FontSize);
+  font-weight: 500;
+  color: var(--primaryColor);
+  padding: 0.8rem 1rem;
+}
+
+.btn:hover {
+  background: var(--hoverColor);
+}
+
+.section {
+  padding: 4rem 0.2rem;
+}
+
+.container {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.secHeader {
+  margin-top: 2rem;
+}
+.secHeader span {
+  text-transform: uppercase;
+  color: var(--secColor);
+  font-size: var(--h3FontSize);
+  font-weight: 600;
+  letter-spacing: 0.5rem;
+}
+.secHeader h2 {
+  font-weight: 500;
+  color: var(--primaryColor);
+  padding: 1rem 0;
+  display: block;
+  text-transform: capitalize;
+  font-size: var(--h1FontSize);
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 1200px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .secHeader h2 {
+    font-size: calc(var(--h1FontSize) - 0.2rem);
+  }
+  .secHeader span {
+    font-size: calc(var(--h3FontSize) - 0.1rem);
+  }
+}
+@media screen and (max-width: 992px) {
+  .section {
+    padding: 3rem 1rem;
+  }
+  .secHeader h2 {
+    font-size: calc(var(--h1FontSize) - 0.4rem);
+  }
+  .secHeader span {
+    font-size: calc(var(--h3FontSize) - 0.2rem);
+  }
+}
+@media screen and (max-width: 768px) {
+  .section {
+    padding: 2rem 0.5rem;
+  }
+  .secHeader h2 {
+    font-size: var(--h2FontSize);
+  }
+  .secHeader span {
+    font-size: var(--smallFontSize);
+    letter-spacing: 0.3rem;
+  }
+  .btn {
+    font-size: var(--smallFontSize);
+    padding: 0.6rem 0.8rem;
+  }
+}
+@media screen and (max-width: 576px) {
+  .section {
+    padding: 1.5rem 0.3rem;
+  }
+  .secHeader h2 {
+    font-size: var(--h3FontSize);
+  }
+  .secHeader span {
+    font-size: var(--smallestFontSize);
+    letter-spacing: 0.1rem;
+  }
+  .btn {
+    font-size: var(--smallestFontSize);
+    padding: 0.5rem 0.6rem;
+  }
+}/*# sourceMappingURL=App.css.map */

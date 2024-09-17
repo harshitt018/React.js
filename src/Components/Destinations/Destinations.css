@@ -1,0 +1,109 @@
+/* Default colors and font sizes */
+:root {
+  --primaryColor: hsl(233, 52%, 19%);
+  --secColor: hsl(233, 16%, 44%);
+  --hoverColor: hsl(8, 100%, 70%);
+  --blackColor: #707070;
+  --greyText: hsl(0, 0%, 75%);
+  --bgColor: hsl(0, 0%, 100%);
+  --shadowColor: hsla(0, 0%, 0%, 0.314);
+  --gradient: linear-gradient(to bottom, hsl(16, 100%, 71%), hsl(8, 100%, 70%));
+  --boxShadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  --borderRadius: 12px;
+  /* Font and Typography */
+  --biggestFontSize: 2.4rem;
+  --h1FontSize: 2.2rem;
+  --h2FontSize: 1.25rem;
+  --h3FontSize: 1rem;
+  --normalFontSize: 0.938rem;
+  --smallFontSize: 0.813rem;
+  --smallestFontSize: 0.75rem;
+}
+
+.Destinations {
+  padding: 2rem 1rem;
+}
+.Destinations .secHeader {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.Destinations .secHeader span {
+  display: block;
+  font-size: var(--h2FontSize);
+  color: var(--secColor);
+  margin-bottom: 0.5rem;
+}
+.Destinations .secHeader h2 {
+  font-size: var(--biggestFontSize);
+  color: var(--primaryColor);
+  margin: 0;
+}
+.Destinations .secContainer {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-content: center;
+}
+.Destinations .singleCard {
+  display: grid;
+  grid-template-columns: 1fr;
+  border-radius: var(--borderRadius);
+  overflow: hidden;
+  box-shadow: var(--boxShadow);
+  transition: transform 0.3s ease-in-out;
+  max-width: 320px;
+  margin: 0 auto;
+}
+.Destinations .singleCard:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--boxShadow);
+}
+.Destinations .singleCard .imgDiv {
+  height: 300px;
+  width: 100%;
+  overflow: hidden;
+}
+.Destinations .singleCard .imgDiv img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+.Destinations .singleCard .imgDiv img:hover {
+  transform: scale(1.05);
+}
+.Destinations .singleCard .infoDiv {
+  padding: 0.75rem;
+  background: var(--bgColor);
+  text-align: center;
+}
+.Destinations .singleCard .infoDiv .upperSpan {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--h3FontSize);
+  font-weight: 600;
+  color: var(--secColor);
+}
+.Destinations .singleCard .infoDiv .lowerSpan {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0.75rem;
+}
+.Destinations .singleCard .infoDiv .lowerSpan .icon {
+  font-size: 14px;
+  margin-right: 0.75rem;
+  color: var(--primaryColor);
+}
+.Destinations .singleCard .infoDiv .lowerSpan .distance {
+  font-weight: 500;
+  font-size: var(--h3FontSize);
+  color: var(--secColor);
+}
+.Destinations .singleCard .infoDiv .description {
+  margin-top: 0.75rem;
+  font-size: var(--smallFontSize);
+  color: var(--greyText);
+  line-height: 1.5;
+}/*# sourceMappingURL=Destinations.css.map */

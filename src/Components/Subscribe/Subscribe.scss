@@ -1,0 +1,152 @@
+/* Default colors and font sizes */
+:root {
+    --primaryColor: hsl(233, 52%, 19%);
+    --secColor: hsl(233, 16%, 44%);
+    --hoverColor: hsl(8, 100%, 70%);
+    --blackColor: #707070;
+    --greyText: hsl(0, 0%, 75%);
+    --bgColor: hsl(0, 0%, 100%);
+    --shadowColor: hsla(0, 0%, 0%, 0.314);
+    --gradient: linear-gradient(to bottom, hsl(16, 100%, 71%), hsl(8, 100%, 70%));
+    --boxShadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    --borderRadius: 12px;
+
+    /* Font and Typography */
+    --biggestFontSize: 2.4rem;
+    --h1FontSize: 2.2rem;
+    --h2FontSize: 1.25rem;
+    --h3FontSize: 1rem;
+    --normalFontSize: 0.938rem;
+    --smallFontSize: 0.813rem;
+    --smallestFontSize: 0.75rem;
+}
+
+.Subscribe {
+    padding: 6rem 1.5rem 4rem;
+    display: flex;
+    justify-content: center;
+
+    .secContent {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        max-width: 600px;
+        width: 100%;
+
+        h1 {
+            text-align: center;
+            font-size: var(--h1FontSize);
+            font-weight: 800;
+            color: var(--secColor);
+        }
+
+        .inputDiv {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            width: 100%;
+            box-shadow: var(--boxShadow);
+            padding: 1rem;
+            border-radius: var(--borderRadius);
+
+            .input {
+                display: flex;
+                align-items: center;
+                border-radius: var(--borderRadius);
+                border: 1px solid var(--secColor);
+
+                .icon {
+                    color: var(--secColor);
+                    margin: 0.5rem;
+                }
+
+                input {
+                    flex: 1;
+                    padding: 0.8rem;
+                    border: none;
+                    outline: none;
+                    color: var(--primaryColor);
+                    background: none;
+
+                    &::placeholder {
+                        font-size: var(--smallFontSize);
+                        color: var(--secColor);
+                        opacity: 0.4;
+                    }
+                }
+            }
+
+            .btn {
+                width: 100%;
+                padding: 0.8rem;
+                background: var(--gradient);
+                color: whitesmoke;
+                border: none;
+                border-radius: var(--borderRadius);
+                cursor: pointer;
+                font-size: var(--normalFontSize);
+                transition: background 0.3s ease;
+
+                &:hover {
+                    background: var(--hoverColor);
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .Subscribe {
+        padding: 4rem 1rem;
+
+        .secContent {
+            .inputDiv {
+                .input {
+                    flex-direction: column;
+                    
+                    .icon {
+                        margin: 0 0 0.5rem 0; 
+                    }
+
+                    input {
+                        margin: 0;
+                        font-size: var(--smallFontSize);
+                    }
+                }
+
+                .btn {
+                    font-size: var(--normalFontSize);
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .Subscribe {
+        padding: 2rem 0.5rem;
+
+        .secContent {
+            .inputDiv {
+                .input {
+                    flex-direction: column;
+                    
+                    .icon {
+                        margin: 0 0 0.5rem 0; 
+                    }
+
+                    input {
+                        font-size: var(--smallFontSize);
+                    }
+                }
+
+                .btn {
+                    padding: 0.6rem;
+                    font-size: var(--smallestFontSize);
+                }
+            }
+        }
+    }
+}

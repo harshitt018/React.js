@@ -1,0 +1,123 @@
+/* Default colors and font sizes */
+:root {
+    --primaryColor: hsl(233, 52%, 19%);
+    --secColor: hsl(233, 16%, 44%);
+    --hoverColor: hsl(8, 100%, 70%);
+    --blackColor: #707070;
+    --greyText: hsl(0, 0%, 75%);
+    --bgColor: hsl(0, 0%, 100%);
+    --shadowColor: hsla(0, 0%, 0%, 0.314);
+    --gradient: linear-gradient(to bottom, hsl(16, 100%, 71%), hsl(8, 100%, 70%));
+    --boxShadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+                 rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    --borderRadius: 12px;
+
+    /* Font and Typography */
+    --biggestFontSize: 2.4rem;
+    --h1FontSize: 2.2rem;
+    --h2FontSize: 1.25rem;
+    --h3FontSize: 1rem;
+    --normalFontSize: 0.938rem;
+    --smallFontSize: 0.813rem;
+    --smallestFontSize: 0.75rem;
+}
+
+.Categories {
+    background-color: var(--bgColor);
+    padding: 4rem 2rem;
+
+    .secHeader {
+        text-align: center;
+        margin-bottom: 2rem;
+
+        span {
+            font-size: var(--h3FontSize);
+            color: var(--secColor);
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 0.1rem;
+        }
+
+        h2 {
+            font-size: var(--biggestFontSize);
+            color: var(--primaryColor);
+            margin: 0.5rem 0;
+            font-weight: 600;
+        }
+    }
+
+    .secContainer {
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+        .singleCard {
+            background: #fff;
+            border-radius: var(--borderRadius);
+            padding: 2rem;
+            box-shadow: var(--boxShadow);
+            text-align: center;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; 
+            height: 100%; 
+
+            &:hover {
+                transform: translateY(-10px);
+                box-shadow: var(--boxShadow);
+            }
+
+            .imgDiv {
+                position: relative;
+                margin-bottom: 1.5rem;
+                display: flex;
+                justify-content: center;
+                align-items: center; 
+
+                .mainImage {
+                    width: 100px;
+                    height: auto;
+                    max-width: 100%;
+                    display: block;
+                }
+
+                .design {
+                    position: absolute;
+                    width: 100px;
+                    height: auto;
+                    top: -20px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    z-index: -1;
+                    opacity: 0.15;
+                }
+            }
+
+            .cardTitle {
+                font-size: var(--h2FontSize);
+                font-weight: 600;
+                color: var(--primaryColor);
+                margin-bottom: 0.5rem;
+            }
+
+            .cardDescription {
+                font-size: var(--h3FontSize);
+                color: var(--secColor);
+                margin: 0;
+                font-weight: 400;
+                line-height: 1.6;
+            }
+        }
+    }
+
+    @media (min-width: 768px) {
+        .singleCard {
+            padding: 2.5rem;  
+        }
+
+        .cardTitle {
+            font-size: 1.5rem;  
+        }
+    }
+}

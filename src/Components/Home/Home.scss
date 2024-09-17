@@ -1,0 +1,121 @@
+/* Default colors and font sizes */
+:root {
+    --primaryColor: hsl(233, 52%, 19%);
+    --secColor: hsl(233, 16%, 44%);
+    --hoverColor: hsl(8, 100%, 70%);
+    --blackColor: #707070;
+    --greyText: hsl(0, 0%, 75%);
+    --bgColor: hsl(0, 0%, 100%);
+    --shadowColor: hsla(0, 0%, 0%, 0.314);
+    --gradient: linear-gradient(to bottom, hsl(16, 100%, 71%), hsl(8, 100%, 70%));
+    --boxShadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+                 rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+
+    /* Font and Typography */
+    --biggestFontSize: 2.4rem;
+    --h1FontSize: 2.2rem;
+    --h2FontSize: 1.25rem;
+    --h3FontSize: 1rem;
+    --normalFontSize: 0.938rem;
+    --smallFontSize: 0.813rem;
+    --smallestFontSize: 0.75rem;
+}
+
+.Home {
+    padding-top: 8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    width: 100vw;
+    position: relative;
+    overflow: hidden;
+
+    .textDiv {
+        text-align: center;
+
+        .redText {
+            color: var(--hoverColor);
+            font-weight: 600;
+            font-size: 1rem;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            font-size: var(--biggestFontSize);
+            font-weight: 900;
+            color: var(--primaryColor);
+            margin: 0 0 1rem;
+        }
+
+        p {
+            color: var(--secColor);
+            font-size: var(--normalFontSize);
+            line-height: 1.5;
+            max-width: 600px; 
+            margin: 0 auto;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+
+            .btn {
+                padding: 1rem;
+                font-size: 15px;
+                background-color: var(--primaryColor);
+                color: var(--bgColor);
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+                
+                &:hover {
+                    background-color: var(--hoverColor);
+                }
+            }
+
+            .playBtn {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                cursor: pointer;
+
+                .icon {
+                    height: 40px;
+                    width: 40px;
+                    padding: 8px;
+                    border-radius: 50%;
+                    background: var(--gradient);
+                    color: whitesmoke;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+        }
+    }
+
+    .ImgDiv {
+        width: 100%;
+        max-width: 800px; 
+        margin: auto;
+        display: flex;
+        justify-content: center;
+
+        img {
+            width: 100%;
+            height: auto; 
+            max-width: 100%; 
+        }
+    }
+
+    .aeroplane {
+        position: absolute;
+        width: 5rem;
+        top: 5rem;
+        transform: translateX(50%);
+    }
+}

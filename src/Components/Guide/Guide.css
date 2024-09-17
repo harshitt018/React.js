@@ -1,0 +1,132 @@
+/* Default colors and font sizes */
+:root {
+  --primaryColor: hsl(233, 52%, 19%);
+  --secColor: hsl(233, 16%, 44%);
+  --hoverColor: hsl(8, 100%, 70%);
+  --blackColor: #707070;
+  --greyText: hsl(0, 0%, 75%);
+  --bgColor: hsl(0, 0%, 100%);
+  --shadowColor: hsla(0, 0%, 0%, 0.314);
+  --gradient: linear-gradient(to bottom, hsl(16, 100%, 71%), hsl(8, 100%, 70%));
+  --boxShadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  --borderRadius: 12px;
+  /* Font and Typography */
+  --biggestFontSize: 2.4rem;
+  --h1FontSize: 2.2rem;
+  --h2FontSize: 1.5rem;
+  --h3FontSize: 1.1rem;
+  --normalFontSize: 0.938rem;
+  --smallFontSize: 0.813rem;
+  --smallestFontSize: 0.75rem;
+}
+
+.Guide {
+  background-color: var(--bgColor);
+  padding: 4rem 2rem;
+}
+.Guide .secContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.Guide .secContainer .textDiv {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.Guide .secContainer .textDiv .secHeader {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.Guide .secContainer .textDiv .secHeader span {
+  display: block;
+  text-transform: uppercase;
+  color: var(--secColor);
+  font-size: var(--h2FontSize);
+  font-weight: 700;
+  letter-spacing: 0.3rem;
+  margin-bottom: 0.5rem;
+}
+.Guide .secContainer .textDiv .secHeader h2 {
+  font-size: var(--biggestFontSize);
+  font-weight: 700;
+  color: var(--primaryColor);
+  padding: 1rem 0;
+  text-transform: capitalize;
+}
+.Guide .secContainer .textDiv .secContent {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.Guide .secContainer .textDiv .secContent .singleSection {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+.Guide .secContainer .textDiv .secContent .singleSection img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  box-shadow: var(--boxShadow);
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.Guide .secContainer .textDiv .secContent .singleSection img:hover {
+  transform: scale(1.1);
+}
+.Guide .secContainer .textDiv .secContent .singleSection .text span {
+  font-size: var(--h3FontSize);
+  color: var(--secColor);
+  font-weight: 700;
+}
+.Guide .secContainer .textDiv .secContent .singleSection .text p {
+  padding-top: 0.5rem;
+  font-size: var(--normalFontSize);
+  color: var(--greyText);
+  line-height: 1.6;
+}
+.Guide .secContainer .imgDiv {
+  width: 100%;
+  max-width: 600px;
+}
+.Guide .secContainer .imgDiv img {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: var(--borderRadius);
+}
+@media screen and (max-width: 768px) {
+  .Guide {
+    padding: 2rem 1rem;
+  }
+  .Guide .secContainer .textDiv .secContent {
+    gap: 1.5rem;
+  }
+  .Guide .secContainer .textDiv .secContent .singleSection img {
+    width: 50px;
+    height: 50px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .Guide {
+    padding: 1.5rem;
+  }
+  .Guide .secContainer .textDiv .secHeader h2 {
+    font-size: var(--h2FontSize);
+  }
+  .Guide .secContainer .textDiv .secContent .singleSection img {
+    width: 40px;
+    height: 40px;
+  }
+  .Guide .secContainer .textDiv .secContent .singleSection .text span {
+    font-size: var(--smallFontSize);
+  }
+  .Guide .secContainer .textDiv .secContent .singleSection .text p {
+    font-size: var(--smallestFontSize);
+  }
+}/*# sourceMappingURL=Guide.css.map */

@@ -1,0 +1,111 @@
+/* Default colors and font sizes */
+:root {
+    --primaryColor: hsl(233, 52%, 19%);
+    --secColor: hsl(233, 16%, 44%);
+    --hoverColor: hsl(8, 100%, 70%);
+    --blackColor: #707070;
+    --greyText: hsl(0, 0%, 75%);
+    --bgColor: hsl(0, 0%, 100%);
+    --shadowColor: hsla(0, 0%, 0%, 0.314);
+    --gradient: linear-gradient(to bottom, hsl(16, 100%, 71%), hsl(8, 100%, 70%));
+    --boxShadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    --borderRadius: 12px;
+
+    /* Font and Typography */
+    --biggestFontSize: 2.4rem;
+    --h1FontSize: 2.2rem;
+    --h2FontSize: 1.25rem;
+    --h3FontSize: 1rem;
+    --normalFontSize: 0.938rem;
+    --smallFontSize: 0.813rem;
+    --smallestFontSize: 0.75rem;
+}
+
+.Sponsors {
+    padding: 2rem 0;
+    text-align: center;
+
+    .sponsorsTitle {
+        font-size: var(--h2FontSize);
+        color: var(--primaryColor);
+        margin-bottom: 1rem;
+    }
+
+    .logos {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        justify-content: center;
+
+        .logoItem {
+            position: relative;
+            width: 100px;
+
+            img {
+                width: 100%;
+                filter: sepia(1);
+                cursor: pointer;
+                opacity: 0.7;
+                transition: filter 0.3s ease, opacity 0.3s ease;
+
+                &:hover {
+                    filter: sepia(0);
+                    opacity: 1;
+                }
+            }
+
+            /* Tooltip styling */
+            &::after {
+                content: attr(data-tooltip);
+                position: absolute;
+                bottom: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+                background: var(--primaryColor);
+                color: #fff;
+                padding: 0.5rem;
+                border-radius: var(--borderRadius);
+                white-space: nowrap;
+                opacity: 0;
+                visibility: hidden;
+                transition: opacity 0.3s ease;
+                font-size: var(--smallFontSize);
+                margin-bottom: 0.5rem;
+            }
+
+            &:hover::after {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    .Sponsors {
+        padding: 1.5rem 0;
+
+        .logos {
+            gap: 1.5rem;
+
+            .logoItem {
+                width: 80px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .Sponsors {
+        padding: 1rem 0;
+
+        .logos {
+            gap: 1rem;
+
+            .logoItem {
+                width: 60px;
+            }
+        }
+    }
+}

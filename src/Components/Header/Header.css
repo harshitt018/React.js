@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+:root {
+  --primaryColor: hsl(233, 52%, 19%);
+  --secColor: hsl(233, 16%, 44%);
+  --hoverColor: hsl(8, 100%, 70%);
+  --blackColor: #707070;
+  --greyText: hsl(0, 0%, 75%);
+  --bgColor: hsl(0, 0%, 100%);
+  --shadowColor: hsla(0, 0%, 0%, 0.314);
+  --gradient: linear-gradient(to bottom, hsl(16, 100%, 71%), hsl(8, 100%, 70%));
+  --boxShadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+               rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  /* Font and Typography */
+  --biggestFontSize: 2.4rem;
+  --h1FontSize: 2.2rem;
+  --h2FontSize: 1.25rem;
+  --h3FontSize: 1rem;
+  --normalFontSize: 0.938rem;
+  --smallFontSize: 0.813rem;
+  --smallestFontSize: 0.75rem;
+}
+
+.Navbar {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  justify-content: space-between;
+  z-index: 1000;
+  width: 100%;
+  padding: 1.5rem;
+  transition: 0.4s ease-in-out;
+}
+.Navbar .logoDiv {
+  display: flex;
+  align-items: center;
+}
+.Navbar .logoDiv .logo {
+  color: var(--primaryColor);
+  font-weight: 900;
+  font-size: var(--h1FontSize);
+}
+.Navbar .toggleIcon .icon, .Navbar .closeIcon .icon {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.Navbar .toggleIcon .icon:hover, .Navbar .closeIcon .icon:hover {
+  color: var(--hoverColor);
+}
+.Navbar .menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  transition: 0.4s ease-in-out;
+  right: auto;
+}
+.Navbar .menu .lists {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  margin-left: 1.5rem;
+}
+.Navbar .menu .lists li {
+  list-style: none;
+}
+.Navbar .menu .lists li a {
+  color: var(--blackColor);
+  text-decoration: none;
+  font-size: var(--h3FontSize);
+  transition: color 0.3s, font-weight 0.3s;
+}
+.Navbar .menu .lists li a:hover {
+  color: var(--primaryColor);
+  font-weight: 700;
+}
+.Navbar .menu .btns {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.Navbar .menu .btns .btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: var(--borderRadius);
+  background-color: var(--primaryColor);
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.Navbar .menu .btns .btn:hover {
+  background-color: var(--hoverColor);
+}
+.Navbar .menu .btns .lang {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--primaryColor);
+  font-size: var(--h3FontSize);
+}
+@media screen and (max-width: 768px) {
+  .Navbar .menu {
+    display: flex;
+    position: absolute;
+    background: var(--gradient);
+    padding: 1.5rem;
+    flex-direction: column;
+    border-radius: 10px;
+    gap: 1rem;
+    top: -50rem;
+    left: 50%;
+    right: 50%;
+    width: 80%;
+    transform: translateX(-50%);
+    box-shadow: var(--boxShadow);
+    transition: 0.4s ease-in-out;
+  }
+  .Navbar .menu .lists {
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+    text-align: center;
+  }
+  .Navbar .menu .lists li {
+    padding: 0.5rem 0;
+    width: 100%;
+    border-radius: 5px;
+    border: 1.5px solid transparent;
+    cursor: pointer;
+    color: var(--blackColor);
+  }
+  .Navbar .menu .lists li:hover {
+    color: var(--primaryColor);
+    font-weight: 700;
+    border: 1.5px dashed var(--primaryColor);
+  }
+  .Navbar .menu .lists li:hover a {
+    font-weight: 600;
+  }
+  .Navbar .menu .lists li a {
+    color: var(--primaryColor);
+    font-weight: 500;
+    font-size: var(--h3FontSize);
+  }
+  .Navbar .menu .btns {
+    width: 100%;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .Navbar .menu .btns .btn {
+    width: 100%;
+  }
+  .Navbar .menu .btns .lang {
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    align-items: center;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--primaryColor);
+  }
+  .Navbar .menu .closeIcon {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+    bottom: -20px;
+    border-radius: 50%;
+    background: var(--hoverColor);
+    padding: 5px;
+    right: 50%;
+    left: 50%;
+    width: 80%;
+    transform: translateX(-50%);
+  }
+  .Navbar .menu .closeIcon .icon {
+    color: var(--primaryColor);
+  }
+}
+.Navbar .showMenu {
+  top: 7rem;
+}
+
+.auth-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--bgColor);
+  padding: 20px;
+  box-shadow: var(--boxShadow);
+  border-radius: 8px;
+  z-index: 1000;
+}
+
+.close-modal {
+  background: var(--primaryColor);
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.close-modal:hover {
+  background: var(--hoverColor);
+}/*# sourceMappingURL=Header.css.map */

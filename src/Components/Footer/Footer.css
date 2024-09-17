@@ -1,0 +1,92 @@
+/* Default colors and font sizes */
+:root {
+  --primaryColor: hsl(233, 52%, 19%);
+  --secColor: hsl(233, 16%, 44%);
+  --hoverColor: hsl(8, 100%, 70%);
+  --blackColor: #707070;
+  --greyText: hsl(0, 0%, 75%);
+  --bgColor: hsl(0, 0%, 100%);
+  --shadowColor: hsla(0, 0%, 0%, 0.314);
+  --gradient: linear-gradient(to bottom, hsl(16, 100%, 71%), hsl(8, 100%, 70%));
+  --boxShadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  --borderRadius: 12px;
+  /* Font and Typography */
+  --biggestFontSize: 2.4rem;
+  --h1FontSize: 2.2rem;
+  --h2FontSize: 1.25rem;
+  --h3FontSize: 1rem;
+  --normalFontSize: 0.938rem;
+  --smallFontSize: 0.813rem;
+  --smallestFontSize: 0.75rem;
+}
+
+.Footer {
+  padding: 4rem 1.5rem 1rem;
+  width: 100%;
+  border-radius: var(--borderRadius);
+  text-align: center;
+  background: var(--gradient);
+  margin: auto;
+}
+.Footer .secContainer {
+  align-items: flex-start;
+}
+.Footer .secContainer .singleSection h2 {
+  font-size: var(--biggestFontSize);
+  color: var(--bgColor);
+  padding-bottom: 0.5rem;
+  font-size: 800;
+}
+.Footer .secContainer .singleSection h3 {
+  color: var(--primaryColor);
+  font-weight: 700;
+  font-size: var(--h3FontSize);
+}
+.Footer .secContainer .singleSection p {
+  font-size: var(--smallFontSize);
+  color: var(--secColor);
+}
+.Footer .secContainer .singleSection li {
+  display: block;
+  padding-top: 1rem;
+  font-weight: 400;
+  color: var(--secColor);
+  cursor: pointer;
+}
+.Footer .secContainer .singleSection li:hover {
+  transform: translateX();
+  font-weight: 500;
+  transition: 0.4s ease-in-out;
+  color: var(--primaryColor);
+}
+.Footer .secContainer .singleSection .social {
+  gap: 0.7rem;
+  padding: 1rem 0;
+  margin: auto;
+  justify-content: center;
+}
+.Footer .secContainer .singleSection .social .icon {
+  font-size: 27px;
+  color: var(--bgColor);
+}
+.Footer .secContainer .singleSection .social .icon:hover {
+  transform: translateY(-7px);
+  transition: 0.4s ease-in-out;
+  color: var(--primaryColor);
+}
+.Footer .secContainer .singleSection .text {
+  font-size: var(--h3FontSize);
+  display: block;
+  padding-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--secColor);
+}
+.Footer .secContainer .singleSection .flex {
+  gap: 0.5rem;
+  margin: auto;
+  justify-content: center;
+}
+.Footer .secContainer .singleSection img {
+  width: 100%;
+  cursor: pointer;
+}/*# sourceMappingURL=Footer.css.map */
