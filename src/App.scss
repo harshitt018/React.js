@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-// Default Page styling
 * {
     padding: 0;
     margin: 0;
@@ -30,7 +29,7 @@
     --smallestFontSize: 0.75rem;
 }
 
-// Default Page styling (Reusable Styles)
+
 .flex {
     display: flex;
     align-items: center;
@@ -86,93 +85,124 @@ img {
     padding-right: 1.5rem;
 }
 
-.secHeader {
-    margin-top: 2rem;
+/* Destinations Section */
+.Destinations {
+    padding: 2rem 1rem;
 
-    span {
-        text-transform: uppercase;
-        color: var(--secColor);
-        font-size: var(--h3FontSize);
-        font-weight: 600;
-        letter-spacing: .5rem;
+    .secHeader {
+        text-align: center;
+        margin-bottom: 2rem;
+
+        span {
+            display: block;
+            font-size: var(--h2FontSize);
+            color: var(--secColor);
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-size: var(--biggestFontSize);
+            color: var(--primaryColor);
+            margin: 0;
+        }
     }
 
-    h2 {
-        font-weight: 500;
-        color: var(--primaryColor);
-        padding: 1rem 0;
-        display: block;
-        text-transform: capitalize;
-        font-size: var(--h1FontSize);
+    .secContainer {
+        display: grid;
+        gap: 1.5rem;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+        justify-content: center;
+    }
+
+    .singleCard {
+        display: grid;
+        grid-template-columns: 1fr;
+        border-radius: var(--borderRadius);
+        overflow: hidden;
+        box-shadow: var(--boxShadow);
+        transition: transform 0.3s ease-in-out;
+        max-width: 320px;
+        margin: 0 auto;
+
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--boxShadow);
+        }
+
+        .imgDiv {
+            height: 300px;
+            width: 100%;
+            overflow: hidden;
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                transition: transform 0.3s ease-in-out;
+
+                &:hover {
+                    transform: scale(1.05);
+                }
+            }
+        }
+
+        .infoDiv {
+            padding: 0.75rem;
+            background: var(--bgColor);
+            text-align: center;
+
+            .upperSpan {
+                display: flex;
+                justify-content: space-between;
+                font-size: var(--h3FontSize);
+                font-weight: 600;
+                color: var(--secColor);
+            }
+
+            .lowerSpan {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding-top: 0.75rem;
+
+                .icon {
+                    font-size: 14px;
+                    margin-right: 0.75rem;
+                    color: var(--primaryColor);
+                }
+
+                .distance {
+                    font-weight: 500;
+                    font-size: var(--h3FontSize);
+                    color: var(--secColor);
+                }
+            }
+
+            .description {
+                margin-top: 0.75rem;
+                font-size: var(--smallFontSize);
+                color: var(--greyText);
+                line-height: 1.5;
+            }
+        }
     }
 }
 
-/* Responsive Styles */
-@media screen and (max-width: 1200px) {
-    .container {
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
 
-    .secHeader h2 {
-        font-size: calc(var(--h1FontSize) - 0.2rem);
-    }
-
-    .secHeader span {
-        font-size: calc(var(--h3FontSize) - 0.1rem);
+@media screen and (min-width: 768px) {
+    .secContainer {
+        grid-template-columns: repeat(2, 1fr); 
     }
 }
 
-@media screen and (max-width: 992px) {
-    .section {
-        padding: 3rem 1rem;
-    }
-
-    .secHeader h2 {
-        font-size: calc(var(--h1FontSize) - 0.4rem);
-    }
-
-    .secHeader span {
-        font-size: calc(var(--h3FontSize) - 0.2rem);
+@media screen and (min-width: 992px) {
+    .secContainer {
+        grid-template-columns: repeat(3, 1fr); 
     }
 }
 
-@media screen and (max-width: 768px) {
-    .section {
-        padding: 2rem 0.5rem;
-    }
-
-    .secHeader h2 {
-        font-size: var(--h2FontSize);
-    }
-
-    .secHeader span {
-        font-size: var(--smallFontSize);
-        letter-spacing: 0.3rem;
-    }
-
-    .btn {
-        font-size: var(--smallFontSize);
-        padding: 0.6rem 0.8rem;
-    }
-}
-
-@media screen and (max-width: 576px) {
-    .section {
-        padding: 1.5rem 0.3rem;
-    }
-
-    .secHeader h2 {
-        font-size: var(--h3FontSize);
-    }
-
-    .secHeader span {
-        font-size: var(--smallestFontSize);
-        letter-spacing: 0.1rem;
-    }
-
-    .btn {
-        font-size: var(--smallestFontSize);
-        padding: 0.5rem 0.6rem;
+@media screen and (min-width: 1200px) {
+    .secContainer {
+        grid-template-columns: repeat(4, 1fr); 
     }
 }
