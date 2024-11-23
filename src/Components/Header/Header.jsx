@@ -3,6 +3,7 @@ import './Header.css';
 import './Auth.css';
 import { AiFillCloseCircle } from 'react-icons/ai';
 import { TbGridDots } from 'react-icons/tb';
+import { FiUser } from 'react-icons/fi';
 import Login from './Login';
 import Signup from './SignUp';
 
@@ -11,6 +12,7 @@ const Header = () => {
     const [transparent, setTransparent] = useState(false); 
     const [authMode, setAuthMode] = useState(null);
     const [showMessage, setShowMessage] = useState(false);
+    const [loggedIn, setLoggedIn] = useState(false); 
 
     const showNavBar = () => setActive(true);
     const removeShowNavBar = () => setActive(false);
@@ -43,10 +45,16 @@ const Header = () => {
     const handleLoginComplete = () => {
         setAuthMode(null);
         setShowMessage(true); 
+        setLoggedIn(true);  // Set loggedIn to true upon login
     };
 
     const closeMessageBox = () => {
         setShowMessage(false); 
+    };
+
+    const handleLogout = () => {
+        setLoggedIn(false);  // Set loggedIn to false on logout
+        setAuthMode(null);
     };
 
     return (
@@ -57,15 +65,26 @@ const Header = () => {
 
             <div className={active ? 'menu showMenu' : 'menu'}>
                 <div className="lists flex">
-                    <li><a href="#">Destination</a></li>
+                    <li><a href="">Destination</a></li>
                     <li><a href="#">Hotels</a></li>
                     <li><a href="#">Flights</a></li>
                     <li><a href="#">Bookings</a></li>
                 </div>
 
                 <div className="btns flex">
-                    <button className="btn" onClick={() => switchAuthMode('login')}>Login</button>
-                    <button className="btn" onClick={() => switchAuthMode('signup')}>SignUp</button>
+                    {loggedIn ? (
+                        <div className="profile-section">
+                            <div className="profile-icon">
+                                <FiUser />
+                            </div>
+                            <button className="btn logout-btn" onClick={handleLogout}>Logout</button>
+                        </div>
+                    ) : (
+                        <>
+                            <button className="btn" onClick={() => switchAuthMode('login')}>Login</button>
+                            <button className="btn" onClick={() => switchAuthMode('signup')}>SignUp</button>
+                        </>
+                    )}
                     <select className="lang">
                         <option value="en">EN</option>
                         <option value="fr">FR</option>
