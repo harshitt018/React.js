@@ -1,4 +1,3 @@
-// signup.jsx
 import React, { useState } from 'react';
 import './Auth.css'; 
 
@@ -6,14 +5,32 @@ const Signup = ({ onSwitch, onSignUpComplete }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
+    const [error, setError] = useState('');
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        
-        if (password === confirmPassword) {
-            onSignUpComplete();
-        } else {
-            alert("Passwords do not match!");
+
+        if (password !== confirmPassword) {
+            setError('Passwords do not match');
+            return;
+        }
+
+        try {
+            const response = await fetch('http://localhost:3001/Signup', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, password })
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                onSignUpComplete(); // Handle successful signup
+            } else {
+                setError(data.message); // Set error message if signup fails
+            }
+        } catch (err) {
+            setError('Error connecting to the server');
         }
     };
 
@@ -43,6 +60,7 @@ const Signup = ({ onSwitch, onSignUpComplete }) => {
                     required
                 />
                 <button type="submit" className="btn">Sign Up</button>
+                {error && <p className="error">{error}</p>} {/* Display error message */}
                 <p>Already have an account? <button onClick={onSwitch}>Login</button></p>
             </form>
         </div>
